@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+
+    <h2>DOCUMENT PREVIEW</h2>
+
+    <pre style="font-size:10px; white-space:pre-wrap;">
+{{ content }}
+    </pre>
+
+    <br>
+
+    <a href="{{ url_for('dashboard.dashboard') }}">
+        <button>BACK TO DASHBOARD</button>
+    </a>
+
+</div>
+
+{% endblock %}

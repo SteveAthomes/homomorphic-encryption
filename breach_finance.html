@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="color:#ff4444">⚠️ BREACH VIEW (UNAUTHORIZED ACCESS)</h2>
+
+<p style="color:#aaa;">
+Attacker accessed database. All sensitive data is encrypted.
+</p>
+
+<table class="finance-table">
+
+<thead>
+<tr>
+<th>Bank</th>
+<th>Account</th>
+<th>Type</th>
+<th>From</th>
+<th>To</th>
+<th>Amount</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for t in data %}
+
+<tr>
+<td>{{ t[0] }}</td>
+<td>{{ t[1] }}</td>
+<td>{{ t[2] }}</td>
+<td>{{ t[3] }}</td>
+<td>{{ t[4] }}</td>
+<td>{{ t[5] }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

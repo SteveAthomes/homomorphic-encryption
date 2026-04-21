@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+
+    <h2>ACCOUNT: {{ account[1] }}</h2>
+
+    <h3 style="margin-top:20px;">
+        CURRENT BALANCE: ₹ {{ balance }}
+    </h3>
+
+    <br>
+
+    <form method="POST" action="{{ url_for('dashboard.add_transaction', account_id=account[0]) }}">
+        <select name="type">
+            <option value="Deposit">DEPOSIT</option>
+            <option value="Withdrawal">WITHDRAWAL</option>
+        </select>
+
+        <input type="number" name="amount" placeholder="AMOUNT" required>
+        <button type="submit">ADD TRANSACTION</button>
+    </form>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>TYPE</th>
+            <th>AMOUNT</th>
+        </tr>
+
+        {% for t in transactions %}
+        <tr>
+            <td>{{ t[0] }}</td>
+            <td>{{ t[1] }}</td>
+            <td>{{ t[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <a href="{{ url_for('dashboard.breach_account', account_id=account[0]) }}">
+        <button>VIEW ENCRYPTED LEDGER</button>
+    </a>
+
+</div>
+
+{% endblock %}
