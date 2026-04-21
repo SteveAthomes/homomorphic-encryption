@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import os
 from cryptography.fernet import Fernet
 
@@ -22,8 +22,8 @@ def encrypt_file(file_data):
     return cipher.encrypt(file_data)
 
 def decrypt_file(encrypted_data):
-=======
-import os
+
+    import os
 from cryptography.fernet import Fernet
 
 # Generate or load a persistent key
@@ -46,5 +46,5 @@ def encrypt_file(file_data):
     return cipher.encrypt(file_data)
 
 def decrypt_file(encrypted_data):
->>>>>>> a4f7494f5e69b82888191170890e42a645601681
+
     return cipher.decrypt(encrypted_data)

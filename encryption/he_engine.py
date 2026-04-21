@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from phe import paillier
 import os
 import pickle
@@ -24,8 +24,8 @@ def decrypt_number(encrypted_number):
 
 
 def get_keys():
-=======
-from phe import paillier
+
+    from phe import paillier
 import os
 import pickle
 
@@ -50,5 +50,5 @@ def decrypt_number(encrypted_number):
 
 
 def get_keys():
->>>>>>> a4f7494f5e69b82888191170890e42a645601681
+
     return public_key, private_key

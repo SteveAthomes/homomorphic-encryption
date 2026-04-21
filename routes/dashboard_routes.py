@@ -9,8 +9,8 @@ import hashlib
 from io import BytesIO
 from config import Config
 
-from he_engine import encrypt_number, decrypt_number, get_keys
-from file_crypto import encrypt_file, decrypt_file
+from encryption.he_engine import encrypt_number, decrypt_number, get_keys
+from encryption.file_crypto import encrypt_file, decrypt_file
 
 from phe import paillier
 from docx import Document
@@ -53,7 +53,7 @@ def exit_breach():
 @login_required
 def dashboard():
 
-    from aes_crypto import decrypt_text  # ✅ MUST BE HERE
+    from encryption.aes_crypto import decrypt_text  # ✅ MUST BE HERE
 
     conn = sqlite3.connect(Config.DATABASE)
     cursor = conn.cursor()
@@ -269,7 +269,7 @@ def analytics_home():
 @login_required
 def finance_home():
 
-    from aes_crypto import decrypt_text
+    from encryption.aes_crypto import decrypt_text
 
     conn = sqlite3.connect(Config.DATABASE)
     cursor = conn.cursor()
@@ -330,7 +330,7 @@ def finance_home():
 @login_required
 def create_bank():
 
-    from aes_crypto import encrypt_text
+    from encryption.aes_crypto import encrypt_text
 
     bank_name = encrypt_text(request.form["bank_name"])
 
@@ -355,7 +355,7 @@ def create_bank():
 @login_required
 def create_bank_account():
 
-    from aes_crypto import encrypt_text
+    from encryption.aes_crypto import encrypt_text
 
     bank_id = request.form["bank_id"]
     name = encrypt_text(request.form["account_name"])

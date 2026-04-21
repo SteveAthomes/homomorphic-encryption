@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import sqlite3
 from config import Config
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS bank_transactions (
 """)
 
     conn.commit()
-=======
+
 import sqlite3
 from config import Config
 
@@ -264,5 +264,5 @@ CREATE TABLE IF NOT EXISTS bank_transactions (
 """)
 
     conn.commit()
->>>>>>> a4f7494f5e69b82888191170890e42a645601681
+
     conn.close()
