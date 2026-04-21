@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from flask import Flask
 from flask_login import LoginManager
 from config import Config
@@ -87,8 +87,8 @@ app.register_blueprint(dashboard_bp)
 # =========================
 
 if __name__ == "__main__":
-=======
-from flask import Flask
+
+    from flask import Flask
 from flask_login import LoginManager
 from config import Config
 from database import init_db
@@ -176,5 +176,5 @@ app.register_blueprint(dashboard_bp)
 # =========================
 
 if __name__ == "__main__":
->>>>>>> a4f7494f5e69b82888191170890e42a645601681
+
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
