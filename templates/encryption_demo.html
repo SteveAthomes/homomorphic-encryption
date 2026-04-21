@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Encryption Demonstration</h2>
+
+<p>Below are encrypted values stored in the cloud:</p>
+
+<ul>
+{% for v in values %}
+    <li>{{ v[0] }}</li>
+{% endfor %}
+</ul>
+
+<p>
+These large random-looking numbers are ciphertext generated
+using the Paillier Homomorphic Encryption scheme.
+</p>
+
+<p>
+Notice that the server stores only ciphertext and never plaintext.
+</p>
+
+<br>
+<a href="{{ url_for('dashboard.dashboard') }}">
+    <button>Back to Dashboard</button>
+</a>
+
+=======
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Encryption Demonstration</h2>
+
+<p>Below are encrypted values stored in the cloud:</p>
+
+<ul>
+{% for v in values %}
+    <li>{{ v[0] }}</li>
+{% endfor %}
+</ul>
+
+<p>
+These large random-looking numbers are ciphertext generated
+using the Paillier Homomorphic Encryption scheme.
+</p>
+
+<p>
+Notice that the server stores only ciphertext and never plaintext.
+</p>
+
+<br>
+<a href="{{ url_for('dashboard.dashboard') }}">
+    <button>Back to Dashboard</button>
+</a>
+
+>>>>>>> a4f7494f5e69b82888191170890e42a645601681
+{% endblock %}

@@ -1,0 +1,138 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="section-title">SYSTEM ANALYTICS</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<div class="stat-title">BANKS</div>
+<div class="stat-value">{{ total_banks }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">ACCOUNTS</div>
+<div class="stat-value">{{ total_accounts }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">TRANSACTIONS</div>
+<div class="stat-value">{{ total_transactions }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">TOTAL VOLUME</div>
+<div class="stat-value">₹ {{ total_volume }}</div>
+</div>
+
+</div>
+
+
+<br><br>
+
+<div class="section-title">BANK ANALYTICS</div>
+
+<div class="card">
+
+<table class="analytics-table">
+
+<thead>
+<tr>
+<th>Bank</th>
+<th>Incoming</th>
+<th>Outgoing</th>
+<th>Transactions</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for b in bank_stats %}
+
+<tr>
+<td>{{ b[0] }}</td>
+<td>₹ {{ b[1] }}</td>
+<td>₹ {{ b[2] }}</td>
+<td>{{ b[3] }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+=======
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="section-title">SYSTEM ANALYTICS</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<div class="stat-title">BANKS</div>
+<div class="stat-value">{{ total_banks }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">ACCOUNTS</div>
+<div class="stat-value">{{ total_accounts }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">TRANSACTIONS</div>
+<div class="stat-value">{{ total_transactions }}</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-title">TOTAL VOLUME</div>
+<div class="stat-value">₹ {{ total_volume }}</div>
+</div>
+
+</div>
+
+
+<br><br>
+
+<div class="section-title">BANK ANALYTICS</div>
+
+<div class="card">
+
+<table class="analytics-table">
+
+<thead>
+<tr>
+<th>Bank</th>
+<th>Incoming</th>
+<th>Outgoing</th>
+<th>Transactions</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for b in bank_stats %}
+
+<tr>
+<td>{{ b[0] }}</td>
+<td>₹ {{ b[1] }}</td>
+<td>₹ {{ b[2] }}</td>
+<td>{{ b[3] }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+>>>>>>> a4f7494f5e69b82888191170890e42a645601681
+{% endblock %}
