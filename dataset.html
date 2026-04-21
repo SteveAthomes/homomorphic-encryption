@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% block content %}
 
@@ -42,4 +43,50 @@
 <br>
 
 
+=======
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Dataset: {{ dataset[1] }}</h2>
+
+<form method="POST" action="{{ url_for('dashboard.add_value', dataset_id=dataset[0]) }}">
+    <input type="number" name="value" placeholder="Enter numeric value" required>
+    <button type="submit">Add Value</button>
+</form>
+
+<br><br>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Encrypted Value (Ciphertext)</th>
+    </tr>
+
+    {% for value in values %}
+<tr>
+    <td>{{ value[0] }}</td>
+    <td>{{ value[1] }}</td>
+    <td>
+        <form method="POST"
+              action="{{ url_for('dashboard.edit_value', value_id=value[0], dataset_id=dataset[0]) }}"
+              style="display:inline;">
+            <input type="number" name="new_value" placeholder="Edit" required>
+            <button type="submit">Update</button>
+        </form>
+
+        <a href="{{ url_for('dashboard.delete_value', value_id=value[0], dataset_id=dataset[0]) }}">
+            <button>Delete</button>
+        </a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+<a href="{{ url_for('dashboard.delete_dataset', dataset_id=dataset[0]) }}">
+    <button style="background:red;">Delete Dataset</button>
+</a>
+
+<br>
+
+
+>>>>>>> a4f7494f5e69b82888191170890e42a645601681
 {% endblock %}
