@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="color:#ff4444">BREACH SIMULATION</h2>
+
+<p>Attacker accessed database but sees encrypted data.</p>
+
+<table>
+
+<tr>
+<th>Bank</th>
+<th>Account</th>
+<th>Balance</th>
+</tr>
+
+{% for r in data %}
+
+<tr>
+<td>{{ r[0] }}</td>
+<td>{{ r[1] }}</td>
+<td>{{ r[2] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
